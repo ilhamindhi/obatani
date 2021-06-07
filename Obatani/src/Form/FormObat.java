@@ -64,7 +64,6 @@ public class FormObat extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         TabelObat = new javax.swing.JTable();
-        btncetak = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -87,25 +86,13 @@ public class FormObat extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(TabelObat);
 
-        btncetak.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Images/Print-2.png"))); // NOI18N
-        btncetak.setText("CETAK");
-        btncetak.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btncetakActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 622, Short.MAX_VALUE)
-                        .addComponent(btncetak))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 687, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -113,9 +100,7 @@ public class FormObat extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(22, 22, 22)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btncetak)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 29, Short.MAX_VALUE))
         );
 
         pack();
@@ -131,23 +116,6 @@ public class FormObat extends javax.swing.JFrame {
         ftd.Itemterpilih();
         this.dispose();
     }//GEN-LAST:event_TabelObatMouseClicked
-
-    private void btncetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btncetakActionPerformed
-        // TODO add your handling code here:
-        String currentDir = System.getProperty("user.dir");
-        java.io.File namaReport = new java.io.File(currentDir+"/src/Report/LaporanObat.jasper");
-        try {
-            net.sf.jasperreports.engine.JasperReport jasper;
-            jasper =(net.sf.jasperreports.engine.JasperReport)
-            net.sf.jasperreports.engine.util.JRLoader.loadObject(namaReport.getPath());
-            net.sf.jasperreports.engine.JasperPrint jp;
-            jp = net.sf.jasperreports.engine.JasperFillManager.fillReport(jasper, null, koneksinya.GetConnection());
-            net.sf.jasperreports.view.JasperViewer.viewReport(jp, false);
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(rootPane, e.getMessage());
-        }
-        
-    }//GEN-LAST:event_btncetakActionPerformed
 
     /**
      * @param args the command line arguments
@@ -193,7 +161,6 @@ public class FormObat extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable TabelObat;
-    private javax.swing.JButton btncetak;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
