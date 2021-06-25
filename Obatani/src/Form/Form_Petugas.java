@@ -466,6 +466,7 @@ public class Form_Petugas extends javax.swing.JFrame {
         // TODO add your handling code here:
         Form_Petugas fp = new Form_Petugas();
         fp.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
